@@ -8,3 +8,16 @@ Ansible playbook to customize a fresh installation of linux desktop. (fedora/arc
 ```
 sudo ansible-playbook post_install.yml
 ```
+
+
+TODO:
+group taski e.g. one with gnome apps but not linking apps that can cause link damage like malcontent or yelp
+setting selected applications on the gnome bar
+dark mode
+setting the warm color and its intensity (bugs???)
+setting the time to go to sleep and lock the screen
+bluetooth disable
+automatic delete trash and temp file
+power button behavior to suspend
+refresh rate to 144hz
+extensions ....

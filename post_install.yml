@@ -70,6 +70,22 @@
       flatpak:
         name: org.mozilla.firefox
         state: present
+    - name: Install Extension Manager
+      flatpak:
+        name: com.mattjakeman.ExtensionManager
+        state: present    
+
+
+
+# - name: Remove multiple packages
+#   community.general.flatpak:
+#     name:
+#       - org.gimp.GIMP
+#       - org.inkscape.Inkscape
+#       - org.mozilla.firefox
+#     state: absent
+
+
   ### Remove apps
     - name: Gnome Maps
       package: 
