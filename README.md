@@ -11,7 +11,6 @@ sudo ansible-playbook post_install.yml
 
 
 TODO:
-group taski e.g. one with gnome apps but not linking apps that can cause link damage like malcontent or yelp
 setting selected applications on the gnome bar
 dark mode
 setting the warm color and its intensity (bugs???)

@@ -3,166 +3,64 @@
   become: yes
   tasks:
   ### Apps
-    - name: Install neofetch
+    - name: Install useful apps
       package:
-        name: neofetch
+        name: 
+          - curl
+          - flatpak
+          - git
+          - neofetch
         state: present
 
   ### Flatpak and Flathub apps
-    - name: Install Flatpak
-      package:
-        name: flatpak
-        state: present
     - name: Enable Flathub repository
       flatpak_remote:
         name: flathub
         flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
         state: present
-    - name: Install Dropbox
+    - name: Install Favorite Flatpack Apps
       flatpak:
-        name: com.dropbox.Client
+        name: 
+          - com.dropbox.Client
+          - org.signal.Signal
+          - com.github.micahflee.torbrowser-launcher
+          - org.libreoffice.LibreOffice
+          - org.gnome.Totem
+          - org.gnome.Calculator
+          - org.gnome.Cheese
+          - org.remmina.Remmina
+          - com.visualstudio.code
+          - de.haeckerfelix.Fragments
+          - org.gnome.eog
+          - org.gnome.Evince
+          - org.mozilla.firefox
+          - com.mattjakeman.ExtensionManager
         state: present 
-    - name: Install Signal
-      flatpak:
-        name: org.signal.Signal
-        state: present
-    - name: Install Tor
-      flatpak:
-        name: com.github.micahflee.torbrowser-launcher
-        state: present
-    - name: Install LibreOffice
-      flatpak:
-        name: org.libreoffice.LibreOffice
-        state: present
-    - name: Install Totem
-      flatpak:
-        name: org.gnome.Totem
-        state: present
-    - name: Install Calculator
-      flatpak:
-        name: org.gnome.Calculator
-        state: present
-    - name: Install Cheese
-      flatpak:
-        name: org.gnome.Cheese
-        state: present
-    - name: Install Remmina
-      flatpak:
-        name: org.remmina.Remmina
-        state: present
-    - name: Install Code
-      flatpak:
-        name: com.visualstudio.code
-        state: present
-    - name: Install Fragments
-      flatpak:
-        name: de.haeckerfelix.Fragments
-        state: present
-    - name: Install Image Viewer
-      flatpak:
-        name: org.gnome.eog
-        state: present
-    - name: Install Evince
-      flatpak:
-        name: org.gnome.Evince
-        state: present
-    - name: Install Firefox
-      flatpak:
-        name: org.mozilla.firefox
-        state: present
-    - name: Install Extension Manager
-      flatpak:
-        name: com.mattjakeman.ExtensionManager
-        state: present    
-
-
-
-# - name: Remove multiple packages
-#   community.general.flatpak:
-#     name:
-#       - org.gimp.GIMP
-#       - org.inkscape.Inkscape
-#       - org.mozilla.firefox
-#     state: absent
-
-
   ### Remove apps
-    - name: Gnome Maps
+    - name: Remove Gnome Apps
       package: 
-        name: gnome-maps
+        name: 
+          - gnome-maps
+          - gnome-weather
+          - gnome-boxes
+          - gnome-calendar
+          - cheese
+          - gnome-clocks
+          - gnome-calculator
+          - gnome-characters
+          - gnome-connections
+          - gnome-contacts
+          - gnome-font-viewer
+          - gnome-logs
+          - baobab
+          - simple-scan
+          - rhythmbox
+          - totem
         state: absent
-    - name: Gnome Weather
-      package: 
-        name: gnome-weather
-        state: absent
-    - name: Gnome Boxes
-      package: 
-        name: gnome-boxes
-        state: absent
-    - name: Gnome Calendar
-      package: 
-        name: gnome-calendar
-        state: absent
-    - name: Cheese
-      package: 
-        name: cheese
-        state: absent
-    - name: Gnome Clocks
-      package: 
-        name: gnome-clocks
-        state: absent
-    - name: Gnome Calculator
-      package: 
-        name: gnome-calculator
-        state: absent
-    - name: Gnome Characters
-      package: 
-        name: gnome-characters
-        state: absent
-    - name: Gnome Connections
-      package: 
-        name: gnome-connections
-        state: absent
-    - name: Gnome Contacts
-      package: 
-        name: gnome-contacts
-        state: absent
-    - name: Gnome Font Viewer
-      package: 
-        name: gnome-font-viewer
-        state: absent   
     - name: Gnome Tour
       package: 
         name: gnome-tour
         state: absent 
-    - name: Gnome Logs 
-      package: 
-        name: gnome-logs
-        state: absent
-    - name: Remove Fedora Media Writer
-      package: 
-        name: mediawriter
-        state: absent
-    - name: Baobab
-      package: 
-        name: baobab
-        state: absent
-    - name: Simple Scan
-      package: 
-        name: simple-scan
-        state: absent
-    - name: Rhythmbox
-      package: 
-        name: rhythmbox
-        state: absent
-    - name: Totem
-      package: 
-        name: totem
-        state: absent
-    - name: Libreoffice 
-      package: 
-        name: libreoffice-core
-        state: absent
     - name: Yelp 
       package: 
         name: yelp
@@ -170,6 +68,14 @@
     - name: Image Viewer 
       package: 
         name: eog
+        state: absent
+    - name: Remove Fedora Media Writer
+      package: 
+        name: mediawriter
+        state: absent
+    - name: Libreoffice 
+      package: 
+        name: libreoffice-core
         state: absent
     - name: Firefox 
       package: 
