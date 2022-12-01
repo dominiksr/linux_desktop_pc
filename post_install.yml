@@ -2,8 +2,8 @@
 - hosts: localhost
   become: yes
   tasks:
-  ### Apps
-    - name: Install useful apps
+    ### Utilities
+    - name: Install useful utilities
       package:
         name: 
           - curl
@@ -11,32 +11,44 @@
           - git
           - neofetch
         state: present
+    ### Apps
+    - name: Install useful apps
+      package:
+        name: 
+          - cockpit
+          - gparted
+        state: present
 
-  ### Flatpak and Flathub apps
+    ### Flatpak and Flathub apps
     - name: Enable Flathub repository
       flatpak_remote:
         name: flathub
         flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
         state: present
-    - name: Install Favorite Flatpack Apps
+    - name: Install useful Flatpack Apps
       flatpak:
         name: 
-          - com.dropbox.Client
-          - org.signal.Signal
-          - com.github.micahflee.torbrowser-launcher
-          - org.libreoffice.LibreOffice
           - org.gnome.Totem
           - org.gnome.Calculator
           - org.gnome.Cheese
+          - org.gnome.Firmware
+          - org.gnome.eog
+          - org.gnome.Evince
           - org.remmina.Remmina
           - com.visualstudio.code
           - de.haeckerfelix.Fragments
-          - org.gnome.eog
-          - org.gnome.Evince
+          - com.dropbox.Client
+          - org.signal.Signal
+          - com.github.micahflee.torbrowser-launcher
+          - org.libreoffice.LibreOffice          
           - org.mozilla.firefox
           - com.mattjakeman.ExtensionManager
+          - dev.geopjr.Collision
+          - org.gimp.GIMP
+          - fr.romainvigier.MetadataCleaner
+          - com.belmoussaoui.Obfuscate
         state: present 
-  ### Remove apps
+    ### Remove apps
     - name: Remove Gnome Apps
       package: 
         name: 
@@ -44,7 +56,6 @@
           - gnome-weather
           - gnome-boxes
           - gnome-calendar
-          - cheese
           - gnome-clocks
           - gnome-calculator
           - gnome-characters
@@ -52,20 +63,22 @@
           - gnome-contacts
           - gnome-font-viewer
           - gnome-logs
+          - cheese
           - baobab
           - simple-scan
           - rhythmbox
           - totem
+          - firefox
         state: absent
-    - name: Gnome Tour
+    - name: Remove Gnome Tour
       package: 
         name: gnome-tour
         state: absent 
-    - name: Yelp 
+    - name: Remove Gnome Help 
       package: 
         name: yelp
         state: absent
-    - name: Image Viewer 
+    - name: Remove Image Viewer 
       package: 
         name: eog
         state: absent
@@ -73,13 +86,9 @@
       package: 
         name: mediawriter
         state: absent
-    - name: Libreoffice 
+    - name: Remove Libreoffice 
       package: 
         name: libreoffice-core
-        state: absent
-    - name: Firefox 
-      package: 
-        name: firefox
         state: absent
     - name: Language that not useful 
       package: 
