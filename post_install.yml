@@ -92,7 +92,7 @@
       package: 
         name: libreoffice-core
         state: absent
-    - name: Language that not useful 
+    - name: Remove language related useless libs 
       package: 
         name: 
           - libzhuyin
