@@ -11,6 +11,7 @@ sudo ansible-playbook post_install.yml
 
 
 TODO:
+
 setting the warm color and its intensity (bugs???)
 
 setting the time to go to sleep and lock the screen
