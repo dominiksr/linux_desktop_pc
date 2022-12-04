@@ -40,6 +40,7 @@
           - com.github.micahflee.torbrowser-launcher
           - org.libreoffice.LibreOffice          
           - org.mozilla.firefox
+          - org.chromium.Chromium
           - com.mattjakeman.ExtensionManager
           - dev.geopjr.Collision
           - org.gimp.GIMP
