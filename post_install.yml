@@ -16,15 +16,11 @@
       package:
         name: 
           - cockpit
+          - gnome-firmware
           - gparted
         state: present
 
     ### Flatpak and Flathub apps
-#     - name: Enable Flathub repository
-#       flatpak_remote:
-#         name: flathub
-#         flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
-#         state: present
     - name: Enable Flathub repository
       command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo        
         
@@ -34,7 +30,6 @@
           - org.gnome.Totem
           - org.gnome.Calculator
           - org.gnome.Cheese
-          - org.gnome.Firmware
           - org.gnome.eog
           - org.gnome.Evince
           - org.remmina.Remmina
