@@ -19,6 +19,8 @@
           - gnome-firmware
           - gparted
         state: present
+    - name: Enabling cockpit
+      command: systemctl enable --now cockpit.socket
 
     ### Flatpak and Flathub apps
     - name: Enable Flathub repository
@@ -62,6 +64,7 @@
           - gnome-contacts
           - gnome-font-viewer
           - gnome-logs
+          - evince
           - cheese
           - baobab
           - simple-scan
@@ -94,6 +97,9 @@
         name: 
           - libzhuyin
           - libpinyin
+          - ibus-anthy
+          - ibus-hangul
+          - ibus-m17n
         state: absent
         
     # - name: Enable Night Light
