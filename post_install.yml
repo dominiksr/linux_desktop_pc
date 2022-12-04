@@ -20,11 +20,14 @@
         state: present
 
     ### Flatpak and Flathub apps
+#     - name: Enable Flathub repository
+#       flatpak_remote:
+#         name: flathub
+#         flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+#         state: present
     - name: Enable Flathub repository
-      flatpak_remote:
-        name: flathub
-        flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
-        state: present
+      command: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo        
+        
     - name: Install useful Flatpack Apps
       flatpak:
         name: 
