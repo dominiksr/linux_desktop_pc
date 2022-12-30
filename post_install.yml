@@ -19,6 +19,7 @@
           - gnome-firmware
           - gnome-tweaks
           - gparted
+          - fcitx5
         state: present
     - name: Enabling cockpit
       command: systemctl enable --now cockpit.socket
@@ -30,7 +31,6 @@
     - name: Install useful Flatpack Apps
       flatpak:
         name: 
-          - org.gnome.Totem
           - org.gnome.Calculator
           - org.gnome.Cheese
           - org.gnome.eog
@@ -49,6 +49,7 @@
           - org.gimp.GIMP
           - fr.romainvigier.MetadataCleaner
           - com.belmoussaoui.Obfuscate
+          - ru.sview.sView
         state: present 
     ### Remove apps
     - name: Remove Gnome Apps
