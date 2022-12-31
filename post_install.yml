@@ -19,7 +19,6 @@
           - gnome-firmware
           - gnome-tweaks
           - gparted
-          - fcitx5
         state: present
     - name: Enabling cockpit
       command: systemctl enable --now cockpit.socket
